@@ -18,22 +18,22 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Keymap 0: Basic layer
  *
  * ,--------------------------------------------------.           ,--------------------------------------------------.
- * |   `    |   1  |   2  |   3  |   4  |   5  |  [   |           |  ]   |   6  |   7  |   8  |   9  |   0  |   =    |
+ * |   `    |   1  |   2  |   3  |   4  |   5  | Home |           | End  |   6  |   7  |   8  |   9  |   0  |   =    |
  * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
- * | Tab    |   '  |   ,  |   .  |   P  |   Y  | PgUp |           | Home |   F  |   G  |   C  |   R  |   L  |   /    |
+ * | Tab    |   '  |   ,  |   .  |   P  |   Y  | PgUp |           |  [   |   F  |   G  |   C  |   R  |   L  |   /    |
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
  * | LCtrl  |   A  |   O  |   E  |   U  |   I  |------|           |------|   D  |   H  |   T  |   N  |   S  |   -    |
- * |--------+------+------+------+------+------| PgDn |           | End  |------+------+------+------+------+--------|
+ * |--------+------+------+------+------+------| PgDn |           |  ]   |------+------+------+------+------+--------|
  * | LShift |   ;  |   Q  |   J  |   K  |   X  |      |           |      |   B  |   M  |   W  |   V  |   Z  |   \    |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
- *   | Play |      |      | VolUp|VolDn |                                       |  Up  | Down | Left |Right |  L1  |
+ *   | Play | VolUp|VolDn |      | Esc  |                                       |  Up  | Down | Left |Right |  L1  |
  *   `----------------------------------'                                       `----------------------------------'
  *                                        ,-------------.       ,-------------.
- *                                        |      |      |       |      |      |
+ *                                        |      |      |       |      | paste|
  *                                 ,------|------|------|       |------+--------+------.
- *                                 |      | Hypr |      |       |      |        |      |
- *                                 | Space|  //  |------|       |------|   BS   |Enter |
- *                                 |      | App  |AltEsc|       |      |        |      |
+ *                                 |      |      |      |       |      |        |      |
+ *                                 | Space| Hypr |------|       |------|   BS   |Enter |
+ *                                 |      |      | Lalt |       | App  |        |      |
  *                                 `--------------------'       `----------------------'
  */
 // If it accepts an argument (i.e, is a function), it doesn't need KC_.
@@ -41,28 +41,28 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [BASE] = LAYOUT_ergodox(  // layer 0 : default
 
 	// left hand
-	KC_GRV,		KC_1,		KC_2,		KC_3,	KC_4,	KC_5,	KC_LBRACKET,
+	KC_GRV,		KC_1,		KC_2,		KC_3,	KC_4,	KC_5,	KC_HOME,
 	KC_TAB,		KC_QUOT,	KC_COMMA,	KC_DOT,	KC_P,	KC_Y,	KC_PGUP,
 	KC_LCTRL,	KC_A,		KC_O,		KC_E,	KC_U,	KC_I,
 	KC_LSFT,	KC_SCOLON,	KC_Q,		KC_J,	KC_K,	KC_X,	KC_PGDN,
 
-	KC_MPLY,	KC_NO,		KC_NO,		KC_VOLU,	KC_VOLD,
+	KC_MPLY,	KC_VOLU,	KC_VOLD,	KC_NO,	KC_ESC,
 
-			KC_NO,  		KC_NO,
-						KC_NO,
-		KC_SPC,	HYPR(KC_APP),	LALT(KC_ESC),
+			KC_NO,  	KC_NO,
+					KC_NO,
+		KC_SPC,	KC_LGUI,	KC_LALT,
 
 	// right hand
-	KC_RBRACKET,	KC_6,		KC_7,		KC_8,	KC_9,	KC_0,	KC_EQUAL,
-	KC_HOME,	KC_F,		KC_G,		KC_C,	KC_R,	KC_L,	KC_SLSH,
+	KC_END,		KC_6,		KC_7,		KC_8,	KC_9,	KC_0,	KC_EQUAL,
+	KC_LBRACKET,	KC_F,		KC_G,		KC_C,	KC_R,	KC_L,	KC_SLSH,
 			KC_D,		KC_H,		KC_T,	KC_N,   KC_S,	KC_MINUS,
-	KC_END,		KC_B,		KC_M,		KC_W,	KC_V,	KC_Z,   KC_BSLASH,
+	KC_RBRACKET,	KC_B,		KC_M,		KC_W,	KC_V,	KC_Z,   KC_BSLASH,
 
 			KC_UP,		KC_DOWN,	KC_LEFT,KC_RIGHT,	TO(1),
 
-			KC_NO,		KC_NO,
+			KC_NO,		KC_INSERT,
 			KC_NO,
-			KC_NO,	KC_BSPC, KC_ENT
+			KC_APP,	KC_BSPC, KC_ENT
     ),
 
 /* Keymap 1: Symbol Layer
