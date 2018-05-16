@@ -29,10 +29,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *   | Play | VolUp|VolDn |      | Esc  |                                       |  Up  | Down | Left |Right |  L1  |
  *   `----------------------------------'                                       `----------------------------------'
  *                                        ,-------------.       ,-------------.
- *                                        |      |      |       |      | paste|
+ *                                        |      |      |       | Ins  | Del |
  *                                 ,------|------|------|       |------+--------+------.
- *                                 |      |      |      |       |      |        |      |
- *                                 | Space| Hypr |------|       |------|   BS   |Enter |
+ *                                 |      |      |      |       | LGui |        |      |
+ *                                 | Space| LGui |------|       |------|   BS   |Enter |
  *                                 |      |      | Lalt |       | App  |        |      |
  *                                 `--------------------'       `----------------------'
  */
@@ -60,8 +60,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 			KC_UP,		KC_DOWN,	KC_LEFT,KC_RIGHT,	TO(1),
 
-			KC_NO,		KC_INSERT,
-			KC_NO,
+			KC_INSERT,	KC_DELETE,
+			KC_LGUI,
 			KC_APP,	KC_BSPC, KC_ENT
     ),
 
